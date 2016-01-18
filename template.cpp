@@ -109,8 +109,7 @@ struct Node
         v=_v,w=_w;
     }
 };///Node for Dijkstra
-namespace my
-{
+
 template<class T>T gcd(T a,T b)
 {
     return b == 0 ? a : gcd(b, a % b);
@@ -202,10 +201,7 @@ bool isConsonant(char ch)
     if (isalpha(ch) && !isVowel(ch)) return true;
     return false;
 }
-}
 
-namespace debug
-{
 int sum()
 {
     return 0;
@@ -224,7 +220,7 @@ template<typename T, typename... Args>void print(T a,Args... args)
     cout<<a<<" ";
     print(args...);
 }
-}
+
 
 /**Shortcut input function**/
 int read_int()
