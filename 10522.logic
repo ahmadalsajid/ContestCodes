@@ -1,0 +1,28 @@
+10522 - Height To Area 
+Tam Wai Lun 
+
+10522 is a maths problem so after figuring out the formula it\'s easy to implement. The vague part was that, if any of the input is zero or negative, the answer must be \"invalid\". The formula I used was x^2 = 1 / (A+B+C)(-A+B+C)(A-B+C)(A+B-C) where A,B,C is 1/Ha, 1/Hb, 1/Hc respectively. So if the rhs is negative, the answer is \"invalid\", otherwise sqrt it to get the answer. This was my working. 
+
+Let a,b,c be the length of the sides, x be the area 
+
+From Heron\'s formula, 
+x=sqrt(s(s-a)(s-b)(s-c)) ---(2) 
+where s=(a+b+c)/2 ---(1) 
+
+With x=(1/2)(base)(height), express a,b,c in terms of x,Ha,Hb,Hc, a = 2x / Ha b = 2x / Hb c = 2x / Hc 
+
+Sub into eqn (1), 
+s = (a+b+c)/2 
+= (2x/Ha + 2x/Hb + 2x/Hc) / 2 
+= x(1/Ha + 1/Hb + 1/Hc) 
+And, 
+s-a = x(-1/Ha + 1/Hb + 1/Hc) 
+s-b = x( 1/Ha - 1/Hb + 1/Hc) 
+s-c = x( 1/Ha + 1/Hb - 1/Hc) 
+
+Let A,B,C be 1/Ha, 1/Hb, 1/Hc resp. and sub into eqn (2), 
+x^2 = s(s-a)(s-b)(s-c) 
+x^2 = x^4 (A+B+C)(-A+B+C)(A-B+C)(A+B-C) 
+1/x^2 = (A+B+C)(-A+B+C)(A-B+C)(A+B-C) 
+x^2 = 1 / (A+B+C)(-A+B+C)(A-B+C)(A+B-C) ---(3) 
+
